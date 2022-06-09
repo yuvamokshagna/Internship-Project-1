@@ -11,12 +11,12 @@
      <meta name="author" content="">
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-     <link rel="stylesheet" href="{% static 'fileConverter/aos.css' %}">
-     <link rel="stylesheet" href="{% static 'fileConverter/bootstrap.min.css' %}">
-     <link rel="stylesheet" href="{% static 'fileConverter/font-awesome.min.css' %}">
+     <link rel="stylesheet" href="{% static 'style/aos.css' %}">
+     <link rel="stylesheet" href="{% static 'style/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'style/font-awesome.min.css' %}">
 
      <!-- MAIN CSS -->
-     <link rel="stylesheet" href="{% static 'fileConverter/index.css' %}">
+     <link rel="stylesheet" href="{% static 'style/index.css' %}">
 
 </head>
 <body data-spy="scroll" data-target="#navbarNav" data-offset="50">
@@ -59,7 +59,12 @@
             <div class="seperation"></div>
             {% csrf_token %}
             {{ form.as_p }}
+
+
             <button class="custom-btn bg-color" type="submit">Upload Wav File</button>
+
+            <div class="seperation"></div>
+            <h5>After Clicking on Upload wait until new screen is loaded</h5>
         </form>
         {% endblock %}
         </div>

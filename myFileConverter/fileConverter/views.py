@@ -14,19 +14,19 @@ def index(request):
             initial_obj = form.save(commit=False)
             initial_obj.save()
             initial_obj.document
-            run(initial_obj.document, "out/ConvertedMIDIFile.mid")
+            run(initial_obj.document, "convertedfiles/ConvertedMIDIFile.mid")
             # convert_files(filename)
-            return render(request, 'fileConverter/convert.html')
+            return render(request, 'html/convert.html')
     else:
         form = MusicFileForm()
-    return render(request, 'fileConverter/index.html', {
+    return render(request, 'html/index.html', {
         'form': form
     })
 
 
 
 def dowload(request):
-    fsock = open('out/ConvertedMIDIFile.mid', 'rb')
+    fsock = open('convertedfiles/ConvertedMIDIFile.mid', 'rb')
     response = HttpResponse(fsock, content_type='audio/mpeg')
     response['Content-Disposition'] = "attachment; filename=convertedMIDIFile.mid"
     return response
