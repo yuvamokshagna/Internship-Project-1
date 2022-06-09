@@ -1,0 +1,79 @@
+{% load static %}
+
+<head>
+
+     <title>Wav Converter</title>
+    {% csrf_token %}
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="{% static 'fileConverter/aos.css' %}">
+     <link rel="stylesheet" href="{% static 'fileConverter/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'fileConverter/font-awesome.min.css' %}">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="{% static 'fileConverter/index.css' %}">
+
+</head>
+<body data-spy="scroll" data-target="#navbarNav" data-offset="50">
+
+    <!-- MENU -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container" id="nav-container">
+
+            <a class="navbar-brand" href="">Wav Converter</a>
+
+            <div id="navbarNav">
+                <ul class="navbar-nav ml-lg-auto">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link smoothScroll">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link smoothScroll">About Us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link smoothScroll">Contact</a>
+                    </li>
+                </ul>
+
+                
+            </div>
+
+        </div>
+    </nav>
+
+
+
+     <!-- Uploading the fileConverter -->
+     <section class="converter d-flex flex-column justify-content-center align-items-center" id="home">
+        
+        <!-- we need to put our fileConverter in href -->
+        <!-- link for downloading -->
+        <h3>Converted MIDI File Here</h3>
+        <div class="seperation"></div>
+        <a id="download" href="{% url 'download' %}">Click to download</a>
+
+        <!-- Player for playing -->
+        <!--<midi-player src="../out/out.mid" sound-font=""  id="mainPlayer" data-js-focus-visible="">
+        </midi-player>-->
+     </section>
+
+
+     <!-- SCRIPTS -->
+    <script src="{% static 'script/jquery.min.js' %}"></script>
+    <script src="{% static 'script/bootstrap.min.js' %}"></script>
+    <script src="{% static 'script/aos.js' %}"></script>
+    <script src="{% static 'script/smoothscroll.js' %}"></script>
+    <script src="{% static 'script/js/custom.js' %}"></script>
+
+     <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.22.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.4.0"></script>
+     
+
+</body>
+</html>
